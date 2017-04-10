@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Reminder</string>
+
+    <!-- Time Setting Screen -->
+    <string name="name_label">NAME</string>
+    <string name="zip">ZIP CODE</string>
+
+    <!-- User Preference -->
+    <string name="user_preference_title">User Preference</string>
+    <string name="title_user_name_preference">User</string>
+    <string name="summary_user_name_preference">Please enter your name</string>
+    <string name="dialog_title_user_name_preference">Enter your name</string>
+</resources>

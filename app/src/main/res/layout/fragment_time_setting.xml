@@ -1,0 +1,45 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_time_setting_layout"
+    tools:context="reminderpackage.reminder.TimeSettingFragment">
+
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/day_recycler_view"
+        android:layout_width= "0dp"
+        android:layout_height="match_parent"
+        android:layout_weight = "12">
+
+        </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/user_name_button"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="@string/name_label"
+            />
+
+        <Button
+            android:id="@+id/user_zip_code_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/zip"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
