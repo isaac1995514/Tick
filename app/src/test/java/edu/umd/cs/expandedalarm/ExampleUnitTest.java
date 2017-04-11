@@ -1,4 +1,4 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import org.junit.Test;
 

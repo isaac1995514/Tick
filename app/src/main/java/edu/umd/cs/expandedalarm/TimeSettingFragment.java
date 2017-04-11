@@ -1,4 +1,4 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -17,19 +17,17 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 import java.util.List;
 
-import reminderpackage.reminder.model.WeekDay;
-import reminderpackage.reminder.model.WeekDayService;
+import edu.umd.cs.expandedalarm.model.WeekDay;
+import edu.umd.cs.expandedalarm.model.WeekDayService;
 
 public class TimeSettingFragment extends Fragment {
-
     private FragmentManager fm;
     private RecyclerView recyclerView;
     private WeekDayAdapter weekDayAdapter;
     private WeekDayService weekDayService;
     private Button user;
 
-
-    public static TimeSettingFragment newInstance(){
+    public static TimeSettingFragment newInstance() {
         return new TimeSettingFragment();
     }
 
@@ -38,7 +36,6 @@ public class TimeSettingFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         weekDayService = DependencyFactory.getWeekDayService(getActivity());
-
     }
 
     @Override
@@ -51,49 +48,44 @@ public class TimeSettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getActivity(), PerferenceActivity.class));
+                startActivity(new Intent(getActivity(), PreferenceActivity.class));
             }
         });
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.day_recycler_view);
+        recyclerView = (RecyclerView) view.findViewById(R.id.day_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
 
         return view;
-
     }
 
-    private void updateUI(){
-
+    private void updateUI() {
         List<WeekDay> currentInfo = weekDayService.getAllWeekDays();
 
-        if (weekDayAdapter == null){
+        if (weekDayAdapter == null) {
             weekDayAdapter = new WeekDayAdapter(currentInfo);
             recyclerView.setAdapter(weekDayAdapter);
         } else {
             weekDayAdapter.setWeekDays(currentInfo);
             weekDayAdapter.notifyDataSetChanged();
         }
-
     }
 
-    private class WeekDayHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
+    private class WeekDayHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private WeekDay weekDay;
         private int hour, minute;
         private TextView day, time;
 
-        public WeekDayHolder(View itemView){
+        public WeekDayHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 
             day = (TextView) itemView.findViewById(R.id.day_of_week);
             time = (TextView) itemView.findViewById(R.id.time_of_week);
-
         }
 
-        public void bindWeekDay(WeekDay weekDay){
+        public void bindWeekDay(WeekDay weekDay) {
             this.weekDay = weekDay;
 
             day.setText(weekDay.getDay().toString());
@@ -101,14 +93,14 @@ public class TimeSettingFragment extends Fragment {
         }
 
         @Override
-        public void onClick(View view){
+        public void onClick(View view) {
             Calendar calendar = Calendar.getInstance();
 
             //Getting Current Time
             hour = calendar.get(Calendar.HOUR_OF_DAY);
             minute = calendar.get(Calendar.MINUTE);
 
-            TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener(){
+            TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
 
 
                 @Override
@@ -120,48 +112,38 @@ public class TimeSettingFragment extends Fragment {
             };
 
             // Launch Time Picker Dialog
-            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),listener,hour, minute, false);
+            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), listener, hour, minute, false);
             timePickerDialog.show();
-
         }
-
     }
 
-    private class WeekDayAdapter extends RecyclerView.Adapter<WeekDayHolder>{
-
+    private class WeekDayAdapter extends RecyclerView.Adapter<WeekDayHolder> {
         private List<WeekDay> weekDays;
 
-        public WeekDayAdapter(List<WeekDay> weekDays){
+        public WeekDayAdapter(List<WeekDay> weekDays) {
             this.weekDays = weekDays;
         }
 
-        public void setWeekDays(List<WeekDay> weekDays){
+        public void setWeekDays(List<WeekDay> weekDays) {
             this.weekDays = weekDays;
         }
 
         @Override
-        public WeekDayHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        public WeekDayHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View weekDay_view = layoutInflater.inflate(R.layout.list_item_weekday, parent, false);
             return new WeekDayHolder(weekDay_view);
         }
 
         @Override
-        public void onBindViewHolder(WeekDayHolder weekDayHolder, int position){
+        public void onBindViewHolder(WeekDayHolder weekDayHolder, int position) {
             WeekDay weekDay = weekDays.get(position);
             weekDayHolder.bindWeekDay(weekDay);
         }
 
         @Override
-        public int getItemCount(){
+        public int getItemCount() {
             return 7;
         }
-
     }
-
-
-
-
-
-
 }

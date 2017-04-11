@@ -1,4 +1,4 @@
-package reminderpackage.reminder.model;
+package edu.umd.cs.expandedalarm.model;
 
 import java.io.Serializable;
 

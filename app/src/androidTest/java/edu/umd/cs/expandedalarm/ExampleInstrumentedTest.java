@@ -1,4 +1,4 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("reminderpackage.reminder", appContext.getPackageName());
+        assertEquals("edu.umd.cs.expandedalarm", appContext.getPackageName());
     }
 }

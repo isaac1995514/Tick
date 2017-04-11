@@ -1,8 +1,8 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import android.content.Context;
 
-import reminderpackage.reminder.model.WeekDayService;
+import edu.umd.cs.expandedalarm.model.WeekDayService;
 
 /**
  * Created by Isaac on 4/9/2017.
@@ -17,9 +17,5 @@ public class DependencyFactory {
         }
 
         return weekDayService;
-
-
     }
-
-
 }
