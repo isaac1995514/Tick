@@ -2,6 +2,8 @@ package edu.umd.cs.expandedalarm;
 
 import android.app.AlarmManager;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import edu.umd.cs.expandedalarm.model.ScheduleService;
 import edu.umd.cs.expandedalarm.model.WeekDayService;
@@ -14,6 +16,7 @@ public class DependencyFactory {
     private static WeekDayService weekDayService;
     private static ScheduleService scheduleService;
     private static AlarmManager alarmManager;
+    private static SharedPreferences user_preference;
 
     public static WeekDayService getWeekDayService(Context context){
         if (weekDayService == null){
@@ -39,6 +42,16 @@ public class DependencyFactory {
         return alarmManager;
 
     }
+
+    public static SharedPreferences getUser_preference(Context context){
+
+        if (user_preference == null){
+            user_preference = PreferenceManager.getDefaultSharedPreferences(context);
+        }
+
+        return user_preference;
+    }
+
 
 
 

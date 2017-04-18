@@ -5,6 +5,20 @@
             android:key="user_name"
             android:title="@string/title_user_name_preference"
             android:summary = "@string/summary_user_name_preference"
-            android:dialogTitle="@string/dialog_title_user_name_preference" />
+
+            />
+
+        <EditTextPreference
+            android:key="zip_code"
+            android:title="@string/title_zip_code_preference"
+            android:summary="@string/summary_zip_code_preference"
+
+            />
+
+        <CheckBoxPreference
+            android:key="relationship"
+            android:title="@string/title_relationship_preference"
+            android:summary="@string/summary_relationship_preference" />
+
     </PreferenceCategory>
 </PreferenceScreen>

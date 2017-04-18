@@ -49,6 +49,7 @@ public class TimeSettingFragment extends Fragment {
             public void onClick(View v) {
 
                 startActivity(new Intent(getActivity(), PreferenceActivity.class));
+
             }
         });
 
