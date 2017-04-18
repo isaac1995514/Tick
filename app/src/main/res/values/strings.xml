@@ -9,7 +9,7 @@
 
 
     <!-- Time Setting Screen -->
-    <string name="name_label">NAME</string>
+    <string name="name_label">Preference</string>
     <string name="zip">ZIP CODE</string>
 
     <!-- User Preference -->

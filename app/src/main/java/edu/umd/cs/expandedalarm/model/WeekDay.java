@@ -9,16 +9,16 @@ import java.io.Serializable;
 public class WeekDay implements Serializable{
 
     private Day day;
-    private int hour = 0;
-    private int minute = 0;
+    private String hour = "00";
+    private String minute = "00";
 
-    public void setTime(int hour, int minute){
+    public void setTime(String hour, String minute){
         this.hour = hour;
         this.minute = minute;
     }
 
     public String getTime(){
-        return Integer.toString(hour) + " : " + Integer.toString(minute);
+        return hour + " : " + minute;
     }
 
     public void setMonday(){

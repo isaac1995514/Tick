@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name = "colorPrimary">#985d20</color>
+    <color name = "colorPrimaryDark">#44291b</color>
+    <color name = "colorAccent">#FF4081</color>
+    <color name = "weekDayLayout">#D3D3D3</color>
+    <color name = "weekDayTextColor">#93aa13</color>
+
+    <!-- Color Schema 1 -->
+    <color name = "light_brown">#d9b77a</color>
+    <color name = "brown">#985d20</color>
+    <color name = "dark_brown">#44291b</color>
+    <color name = "green">#93aa13</color>
+    <color name = "gray_green">#e3e4da</color>
+
 </resources>

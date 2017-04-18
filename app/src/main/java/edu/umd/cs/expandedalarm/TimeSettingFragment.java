@@ -102,17 +102,17 @@ public class TimeSettingFragment extends Fragment {
 
             TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
 
-
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                    weekDayService.updateTime(weekDay.getDay(), hourOfDay, minute);
+                    weekDayService.updateTime(weekDay.getDay(), Integer.toString(hourOfDay), Integer.toString(minute));
                     updateUI();
                 }
             };
 
             // Launch Time Picker Dialog
-            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), listener, hour, minute, false);
+            TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), R.style.TimePickerTheme, listener, hour, minute, false);
+
             timePickerDialog.show();
         }
     }
