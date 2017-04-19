@@ -1,0 +1,20 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key = "abc">
+    <CheckBoxPreference
+        android:key="weather"
+        android:title="Weather"
+        android:summary="   Check All"/>
+    <CheckBoxPreference
+        android:key="rain"
+        android:title="         Rain" />
+    <CheckBoxPreference
+        android:key="snow"
+        android:title="         Snow" />
+    <CheckBoxPreference
+        android:key="wind"
+        android:title="         Wind" />
+    <CheckBoxPreference
+        android:key="temp"
+        android:title="         Temperature" />
+</PreferenceScreen>
