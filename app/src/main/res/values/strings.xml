@@ -21,4 +21,11 @@
     <string name="summary_zip_code_preference">Please enter you zip code</string>
     <string name="summary_relationship_preference">Are you in a relationship?</string>
 
+    <!-- Valentine -->
+    <string name="valentine">Valentine</string>
+
+
+    <!-- Weather Reminder -->
+    <string name="weatherReminder">Weather Reminder</string>
+
 </resources>

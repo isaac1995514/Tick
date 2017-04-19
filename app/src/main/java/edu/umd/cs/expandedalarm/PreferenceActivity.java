@@ -2,6 +2,8 @@ package edu.umd.cs.expandedalarm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
 public class PreferenceActivity extends AppCompatActivity {
@@ -21,6 +23,29 @@ public class PreferenceActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.user_preference);
 
             setPreferencesFromResource(R.xml.user_preference, rootKey);
+
+            CheckBoxPreference weather =
+                    (CheckBoxPreference)getPreferenceManager().findPreference("weather");
+
+            weather.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference pref) {
+                    CheckBoxPreference p = (CheckBoxPreference)pref;
+                    CheckBoxPreference rain =
+                            (CheckBoxPreference)getPreferenceManager().findPreference("rain");
+                    CheckBoxPreference snow =
+                            (CheckBoxPreference)getPreferenceManager().findPreference("snow");
+                    CheckBoxPreference wind =
+                            (CheckBoxPreference)getPreferenceManager().findPreference("wind");
+                    CheckBoxPreference temp =
+                            (CheckBoxPreference)getPreferenceManager().findPreference("temp");
+                    rain.setChecked(p.isChecked());
+                    snow.setChecked(p.isChecked());
+                    wind.setChecked(p.isChecked());
+                    temp.setChecked(p.isChecked());
+                    return false;
+                }
+            });
         }
 
     }
