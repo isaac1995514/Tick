@@ -53,7 +53,7 @@ public class WeekDayService {
 
 
         for(WeekDay.Day day: WeekDay.Day.values()){
-            String time = scheduleService.getScdedule(day.toString());
+            String time = scheduleService.getSchedule(day.toString());
             if (time != null){
                     String[] timeSplit = time.split(":");
                     Log.d("TimeSplit",timeSplit[0]);
