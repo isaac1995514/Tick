@@ -1,11 +1,10 @@
-package edu.umd.cs.groupproject;
+package edu.umd.cs.expandedalarm;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.view.Window;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,21 +27,23 @@ public class MainActivity extends AppCompatActivity {
         final TextView curr_temp = (TextView) findViewById(R.id.current_temp);
         final TextView tempText = (TextView) findViewById(R.id.tempText);
         final TextView main_weather = (TextView) findViewById(R.id.main_weather);
+
         if (weather.isChecked()) {
             rain.setChecked(true);
             snow.setChecked(true);
             wind.setChecked(true);
         }
+
         if (temp.isChecked()) {
             minTemp.setEnabled(true);
             maxTemp.setEnabled(true);
             tempText.setTextColor(Color.BLACK);
-        }
-        else {
+        } else {
             minTemp.setEnabled(false);
             maxTemp.setEnabled(false);
             tempText.setTextColor(Color.GRAY);
         }
+
         weather.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
@@ -54,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             minTemp.setEnabled(true);
                             maxTemp.setEnabled(true);
                             tempText.setTextColor(Color.BLACK);
-                        }
-                        else {
+                        } else {
                             rain.setChecked(false);
                             snow.setChecked(false);
                             wind.setChecked(false);
@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             minTemp.setEnabled(true);
                             maxTemp.setEnabled(true);
                             tempText.setTextColor(Color.BLACK);
-                        }
-                        else {
+                        } else {
                             minTemp.setEnabled(false);
                             maxTemp.setEnabled(false);
                             tempText.setTextColor(Color.GRAY);
@@ -83,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
         String city = new CityPreference(MainActivity.this).getCity();
         JSONObject json = RemoteFetch.getJSON(MainActivity.this, city);
-        Log.e("SimpleWeather", json.toString());
+        Log.d("SimpleWeather", json.toString());
         try {
             JSONObject main = json.getJSONObject("main");
-            curr_temp.setText(String.valueOf(main.getDouble("temp"))+" \u2109");
+            curr_temp.setText(String.valueOf(main.getDouble("temp")) + " \u2109");
             main_weather.setText(String.valueOf(json));
-        }catch(Exception e){
+        } catch (Exception e) {
             Log.e("SimpleWeather", "One or more fields not found in the JSON data");
         }
     }

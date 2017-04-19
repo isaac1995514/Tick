@@ -1,45 +1,32 @@
-<LinearLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_time_setting_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_time_setting_layout"
-    tools:context="reminderpackage.reminder.TimeSettingFragment">
+    tools:context=".TimeSettingFragment"
+    android:background="@color/light_brown"
+    android:orientation="vertical"
+    >
 
     <android.support.v7.widget.RecyclerView
-
         android:id="@+id/day_recycler_view"
-        android:layout_width= "0dp"
-        android:layout_height="match_parent"
-        android:layout_weight = "12">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/weekday_adapter_layout"
+        android:layout_weight="17" />
 
-        </android.support.v7.widget.RecyclerView>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
         <Button
             android:id="@+id/user_name_button"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:text="@string/name_label"
-            />
+            android:background="@drawable/preference_button_layout"
+            android:layout_centerHorizontal="true" />
 
-        <Button
-            android:id="@+id/user_zip_code_button"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/zip"
-            />
-
-
-    </LinearLayout>
-
+    </RelativeLayout>
 </LinearLayout>

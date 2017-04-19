@@ -10,4 +10,11 @@
 
     </style>
 
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+
+        <item name = "colorAccent">@color/brown</item>
+        <item name = "colorControlNormal">@color/gray_green</item>
+
+    </style>
+
 </resources>

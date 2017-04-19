@@ -1,15 +1,14 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
-public class PerferenceActivity extends AppCompatActivity {
-
+public class PreferenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perference);
+        setContentView(R.layout.activity_preference);
 
         getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new UserPreference()).commit();

@@ -1,4 +1,4 @@
-package edu.umd.cs.groupproject;
+package edu.umd.cs.expandedalarm;
 
 
 import android.app.Activity;
@@ -8,17 +8,17 @@ public class CityPreference {
 
     SharedPreferences prefs;
 
-    public CityPreference(Activity activity){
+    public CityPreference(Activity activity) {
         prefs = activity.getPreferences(Activity.MODE_PRIVATE);
     }
 
     // If the user has not chosen a city yet, return
     // Sydney as the default city
-    String getCity(){
+    String getCity() {
         return prefs.getString("city", "Sydney,AU");
     }
 
-    void setCity(String city){
+    void setCity(String city) {
         prefs.edit().putString("city", city).commit();
     }
 

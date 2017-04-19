@@ -1,4 +1,4 @@
-package reminderpackage.reminder;
+package edu.umd.cs.expandedalarm;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,9 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 /*
 Credited to CMSC 436 AgileDevelopment Project
-
 */
-
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
