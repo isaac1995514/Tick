@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Group Project</string>
     <string name="notification">Notifications</string>
-    <string name="weather">WEATHER</string>
     <string name="weather_choices">RAIN\nSNOW\nWIND\nTEMP</string>
     <string name="temp">&lt;TEMP&lt;</string>
     <string name="on_off">OFF | ON</string>
@@ -27,5 +26,11 @@
 
     <!-- Weather Reminder -->
     <string name="weatherReminder">Weather Reminder</string>
+
+    <!-- Main Screen -->
+    <string name="weather">WEATHER</string>
+    <string name="relationship">RELATIONSHIP</string>
+    <string name="customize">CUSTOMIZE</string>
+    <string name="user_setting">USER SETTING</string>
 
 </resources>

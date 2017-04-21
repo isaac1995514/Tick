@@ -27,7 +27,6 @@ public class TimeSettingFragment extends Fragment {
     private RecyclerView recyclerView;
     private WeekDayAdapter weekDayAdapter;
     private WeekDayService weekDayService;
-    private Button user;
 
     /**
      *
@@ -48,16 +47,7 @@ public class TimeSettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_time_setting, container, false);
-        user = (Button) view.findViewById(R.id.user_name_button);
 
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(getActivity(), PreferenceActivity.class));
-
-            }
-        });
 
         recyclerView = (RecyclerView) view.findViewById(R.id.day_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

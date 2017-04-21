@@ -13,4 +13,16 @@
     <color name = "green">#93aa13</color>
     <color name = "gray_green">#e3e4da</color>
 
+
+    <!-- Main Screen -->
+    <color name = "light_pink">#fbe2f3</color>
+    <color name = "pink">#d18898</color>
+    <color name = "light_blue">#ccdbea</color>
+    <color name = "blue">#508ebf</color>
+    <color name = "light_orange">#f9dc86</color>
+    <color name = "orange">#ffa517</color>
+    <color name = "light_gray">#cfc5c5</color>
+    <color name = "gray">#4a464a</color>
+
+
 </resources>

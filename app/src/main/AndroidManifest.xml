@@ -11,45 +11,43 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".TimeSettingActivity">
+
+        <activity android:name=".MainActivity" />
+
+        <activity android:name=".TimeSettingActivity"/>
+
+        <activity android:name=".PreferenceActivity" />
+
+        <activity android:name=".MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
-        <activity android:name=".PreferenceActivity" />
 
-        <receiver android:name=".AlarmReceiver"
+        <receiver
+            android:name=".AlarmReceiver"
             android:enabled="true"
-            android:exported="true"
-            >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="UPDATE_WEATHER" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".NotificationSender"
+        <receiver
+            android:name=".NotificationSender"
             android:enabled="true"
-            android:exported="true"
-            >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="WEATHER_NOTIFICATION" />
-
             </intent-filter>
         </receiver>
 
-        <service android:name=".AlarmService">
-        </service>
-
+        <service android:name=".AlarmService"></service>
 
 
     </application>
