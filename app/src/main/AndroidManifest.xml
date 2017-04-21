@@ -42,7 +42,7 @@
             >
 
             <intent-filter>
-                <action android:name="NOTIFICATION" />
+                <action android:name="WEATHER_NOTIFICATION" />
 
             </intent-filter>
         </receiver>
