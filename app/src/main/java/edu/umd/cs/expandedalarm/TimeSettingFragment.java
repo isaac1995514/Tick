@@ -19,12 +19,20 @@ import java.util.List;
 import edu.umd.cs.expandedalarm.model.WeekDay;
 import edu.umd.cs.expandedalarm.model.WeekDayService;
 
+
+/**
+ * Enable user to initialize and update default schedule
+ */
 public class TimeSettingFragment extends Fragment {
     private RecyclerView recyclerView;
     private WeekDayAdapter weekDayAdapter;
     private WeekDayService weekDayService;
     private Button user;
 
+    /**
+     *
+     * @return an instance of TimeSettingFragment
+     */
     public static TimeSettingFragment newInstance() {
         return new TimeSettingFragment();
     }
@@ -59,6 +67,9 @@ public class TimeSettingFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Update the Adapter(User interface) after any change to the default schedule
+     */
     private void updateUI() {
         List<WeekDay> currentInfo = weekDayService.getAllWeekDays();
 
@@ -106,6 +117,13 @@ public class TimeSettingFragment extends Fragment {
 
                     weekDayService.updateTime(weekDay.getDay(), Integer.toString(hourOfDay), Integer.toString(minute));
                     updateUI();
+
+                    //reset Alarm by sending intent to the AlarmReceiver
+                    Intent intent = new Intent();
+                    intent.setAction("UPDATE_WEATHER");
+                    intent.putExtra("DayOfWeek", weekDay);
+
+                    getActivity().sendBroadcast(intent);
                 }
             };
 

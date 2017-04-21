@@ -20,6 +20,10 @@ public class DependencyFactory {
     private static SharedPreferences user_preference;
     private static NotificationManager notificationManager;
 
+
+    /**
+     * Contain weekDay objects the initialize the Adapter
+     */
     public static WeekDayService getWeekDayService(Context context){
         if (weekDayService == null){
             weekDayService = new WeekDayService(context);
@@ -28,6 +32,9 @@ public class DependencyFactory {
         return weekDayService;
     }
 
+    /**
+     * Contain user default schedule
+     */
     public static ScheduleService getScheduleService(Context context){
         if (scheduleService == null){
             scheduleService = new ScheduleService(context);
@@ -35,6 +42,7 @@ public class DependencyFactory {
 
         return scheduleService;
     }
+
 
     public static AlarmManager getAlarmManager(Context context){
         if (alarmManager == null){
@@ -45,6 +53,9 @@ public class DependencyFactory {
 
     }
 
+    /**
+     * Contain user preference selected in the PreferenceActivity
+     */
     public static SharedPreferences getUserPreference(Context context){
 
         if (user_preference == null){
