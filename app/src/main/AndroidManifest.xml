@@ -14,11 +14,11 @@
 
         <activity android:name=".MainActivity" />
 
-        <activity android:name=".TimeSettingActivity"/>
+        <activity android:name=".Weather.WeatherSettingActivity"/>
 
-        <activity android:name=".PreferenceActivity" />
+        <activity android:name=".UserSetting.PreferenceActivity" />
 
-        <activity android:name=".MainScreen">
+        <activity android:name=".MainScreen.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         </activity>
 
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".Alarm_Notification.AlarmReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -39,7 +39,7 @@
         </receiver>
 
         <receiver
-            android:name=".NotificationSender"
+            android:name=".Alarm_Notification.NotificationSender"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -47,7 +47,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".AlarmService"></service>
+        <service android:name=".Alarm_Notification.AlarmService"></service>
 
 
     </application>

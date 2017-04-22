@@ -62,7 +62,7 @@ public class WeekDayService {
     }
 
     /**
-     * Initializing the Adapter in TimeSettingFragment each time it execute
+     * Initializing the Adapter in WeatherSettingFragment each time it execute
      */
     public void initList() {
 

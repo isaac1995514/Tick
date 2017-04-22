@@ -3,8 +3,7 @@
     android:id="@+id/fragment_time_setting_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimeSettingFragment"
-    android:background="@color/light_brown"
+    tools:context=".Weather.WeatherSettingFragment"
     android:orientation="vertical"
     >
 
@@ -12,6 +11,8 @@
         android:id="@+id/day_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/weekday_adapter_layout" />
+        android:padding="10dp"
+        android:background="@drawable/weekday_adapter_layout"
+        />
 
 </LinearLayout>
