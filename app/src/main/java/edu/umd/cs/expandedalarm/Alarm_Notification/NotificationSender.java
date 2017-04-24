@@ -1,4 +1,4 @@
-package edu.umd.cs.expandedalarm;
+package edu.umd.cs.expandedalarm.Alarm_Notification;
 
 import android.app.Notification;
 import android.app.NotificationManager;

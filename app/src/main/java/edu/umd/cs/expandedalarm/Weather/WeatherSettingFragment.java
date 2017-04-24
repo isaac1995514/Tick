@@ -1,7 +1,8 @@
-package edu.umd.cs.expandedalarm;
+package edu.umd.cs.expandedalarm.Weather;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,13 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
 import java.util.List;
 
+import edu.umd.cs.expandedalarm.DependencyFactory;
+import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.model.WeekDay;
 import edu.umd.cs.expandedalarm.model.WeekDayService;
 
@@ -23,18 +25,17 @@ import edu.umd.cs.expandedalarm.model.WeekDayService;
 /**
  * Enable user to initialize and update default schedule
  */
-public class TimeSettingFragment extends Fragment {
+public class WeatherSettingFragment extends Fragment {
     private RecyclerView recyclerView;
     private WeekDayAdapter weekDayAdapter;
     private WeekDayService weekDayService;
-    private Button user;
 
     /**
      *
-     * @return an instance of TimeSettingFragment
+     * @return an instance of WeatherSettingFragment
      */
-    public static TimeSettingFragment newInstance() {
-        return new TimeSettingFragment();
+    public static WeatherSettingFragment newInstance() {
+        return new WeatherSettingFragment();
     }
 
     @Override
@@ -48,16 +49,7 @@ public class TimeSettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_time_setting, container, false);
-        user = (Button) view.findViewById(R.id.user_name_button);
 
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(getActivity(), PreferenceActivity.class));
-
-            }
-        });
 
         recyclerView = (RecyclerView) view.findViewById(R.id.day_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -91,8 +83,12 @@ public class TimeSettingFragment extends Fragment {
             super(itemView);
             itemView.setOnClickListener(this);
 
+            Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Caviar_Dreams_Bold.ttf");
+
             day = (TextView) itemView.findViewById(R.id.day_of_week);
             time = (TextView) itemView.findViewById(R.id.time_of_week);
+            day.setTypeface(font);
+            time.setTypeface(font);
         }
 
         public void bindWeekDay(WeekDay weekDay) {

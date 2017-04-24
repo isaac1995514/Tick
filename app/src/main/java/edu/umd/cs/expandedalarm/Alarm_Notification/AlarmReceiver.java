@@ -1,4 +1,4 @@
-package edu.umd.cs.expandedalarm;
+package edu.umd.cs.expandedalarm.Alarm_Notification;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -11,6 +11,7 @@ import android.util.Log;
 import java.util.Calendar;
 import java.util.Date;
 
+import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.model.ScheduleService;
 import edu.umd.cs.expandedalarm.model.WeekDay;
 import edu.umd.cs.expandedalarm.model.WeekDayService;

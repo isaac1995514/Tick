@@ -3,12 +3,14 @@
     android:shape="rectangle">
 
     <solid
-        android:color="#e3e4da" >
+        android:color = "@color/weather_setting_background" >
     </solid>
 
     <stroke
-        android:width="15dp"
-        android:color="#d9b77a" >
+        android:color="@color/weather_setting_stroke"
+        android:width="10dp"
+        android:dashWidth="5dp"
+        >
     </stroke>
 
     <padding
