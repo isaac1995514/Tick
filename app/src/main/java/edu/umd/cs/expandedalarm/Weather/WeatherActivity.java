@@ -6,13 +6,13 @@ import edu.umd.cs.expandedalarm.SingleFragmentActivity;
 
 
 /**
- * WeatherSettingActivity - No describe function
- *      execute WeatherSettingFragment
+ * WeatherActivity - No describe function
+ *      execute WeatherFragment
  */
-public class WeatherSettingActivity extends SingleFragmentActivity {
+public class WeatherActivity extends SingleFragmentActivity {
     @Override
-    protected WeatherSettingFragment createFragment() {
-        return WeatherSettingFragment.newInstance();
+    protected WeatherFragment createFragment() {
+        return WeatherFragment.newInstance();
     }
 
     @Override

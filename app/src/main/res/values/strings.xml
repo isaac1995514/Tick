@@ -33,4 +33,7 @@
     <string name="customize">CUSTOMIZE</string>
     <string name="user_setting">USER SETTING</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

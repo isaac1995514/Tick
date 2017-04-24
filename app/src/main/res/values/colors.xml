@@ -6,7 +6,7 @@
     <color name = "colorControlNormal">#b1b6c9</color>
 
 
-    <!-- WeatherSettingFragment -->
+    <!-- WeatherFragment -->
     <color name = "weather_setting_background">#e5f4f9</color>
     <color name = "weather_setting_font">#2f8db3</color>
     <color name = "weather_setting_stroke">#8dc6d9</color>
