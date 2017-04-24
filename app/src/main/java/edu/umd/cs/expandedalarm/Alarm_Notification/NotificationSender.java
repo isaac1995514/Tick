@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import edu.umd.cs.expandedalarm.DependencyFactory;
+import edu.umd.cs.expandedalarm.RemoteFetch;
+
 /**
  * Created by Isaac on 4/20/2017.
  */
