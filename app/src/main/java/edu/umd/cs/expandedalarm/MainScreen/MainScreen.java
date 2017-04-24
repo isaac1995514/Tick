@@ -11,8 +11,9 @@ import android.widget.TextView;
 import at.markushi.ui.CircleButton;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
+import edu.umd.cs.expandedalarm.Relationship.RelationshipActivity;
 import edu.umd.cs.expandedalarm.UserSetting.PreferenceActivity;
-import edu.umd.cs.expandedalarm.Weather.WeatherSettingActivity;
+import edu.umd.cs.expandedalarm.Weather.WeatherActivity;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(), WeatherSettingActivity.class));
+                startActivity(new Intent(getApplicationContext(), WeatherActivity.class));
 
             }
         });
@@ -60,6 +61,8 @@ public class MainScreen extends AppCompatActivity {
         relationship_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), RelationshipActivity.class));
 
             }
         });

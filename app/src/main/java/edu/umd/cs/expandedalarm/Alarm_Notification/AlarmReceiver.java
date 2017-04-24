@@ -80,14 +80,20 @@ public class AlarmReceiver extends BroadcastReceiver {
 
             // If calendar's time is before current time, add time to next alarm
             if(calendar.getTime().before(new Date(System.currentTimeMillis()))){
-                calendar.add(Calendar.WEEK_OF_MONTH, 1);
+                calendar.add(Calendar.DAY_OF_MONTH, 7);
             }
 
             Log.d("After TIME SET", calendar.getTime().toString());
 
             Intent notification = new Intent().setAction("WEATHER_NOTIFICATION");
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context, day.getDay().getValue(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
-            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), Calendar.WEEK_OF_MONTH, pendingIntent);
+            alarmManager.cancel(pendingIntent);
+            pendingIntent.cancel();
+
+            notification = new Intent().setAction("WEATHER_NOTIFICATION");
+            pendingIntent = PendingIntent.getBroadcast(context, day.getDay().getValue(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
 
             return calendar;
 

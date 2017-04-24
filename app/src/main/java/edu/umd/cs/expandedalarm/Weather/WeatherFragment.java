@@ -25,17 +25,17 @@ import edu.umd.cs.expandedalarm.model.WeekDayService;
 /**
  * Enable user to initialize and update default schedule
  */
-public class WeatherSettingFragment extends Fragment {
+public class WeatherFragment extends Fragment {
     private RecyclerView recyclerView;
     private WeekDayAdapter weekDayAdapter;
     private WeekDayService weekDayService;
 
     /**
      *
-     * @return an instance of WeatherSettingFragment
+     * @return an instance of WeatherFragment
      */
-    public static WeatherSettingFragment newInstance() {
-        return new WeatherSettingFragment();
+    public static WeatherFragment newInstance() {
+        return new WeatherFragment();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class WeatherSettingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_time_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_weather, container, false);
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.day_recycler_view);

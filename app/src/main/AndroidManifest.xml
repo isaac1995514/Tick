@@ -11,21 +11,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".Weather.WeatherSettingActivity"/>
-
+        <activity android:name=".Weather.WeatherActivity" />
         <activity android:name=".UserSetting.PreferenceActivity" />
-
         <activity android:name=".MainScreen.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
 
         <receiver
@@ -37,7 +31,6 @@
                 <action android:name="UPDATE_WEATHER" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".Alarm_Notification.NotificationSender"
             android:enabled="true"
@@ -47,9 +40,9 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".Alarm_Notification.AlarmService"></service>
+        <service android:name=".Alarm_Notification.AlarmService" />
 
-
+        <activity android:name=".Relationship.RelationshipActivity"></activity>
     </application>
 
 </manifest>
