@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.umd.cs.expandedalarm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Weather.WeatherActivity" />
+        <activity android:name=".UserSetting.PreferenceActivity" />
+        <activity android:name=".MainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Alarm_Notification.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="UPDATE_WEATHER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Alarm_Notification.NotificationSender"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="WEATHER_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".Alarm_Notification.AlarmService" />
+
+        <activity android:name=".Relationship.RelationshipActivity"></activity>
+    </application>
+
+</manifest>

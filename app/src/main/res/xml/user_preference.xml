@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/user_preference_title">
+        <EditTextPreference
+            android:key="user_name"
+            android:title="@string/title_user_name_preference"
+            android:summary = "@string/summary_user_name_preference"
+
+            />
+
+        <EditTextPreference
+            android:key="zip_code"
+            android:title="@string/title_zip_code_preference"
+            android:summary="@string/summary_zip_code_preference"
+
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title = "@string/valentine">
+
+        <CheckBoxPreference
+            android:key="relationship"
+            android:title="@string/title_relationship_preference"
+            android:summary="@string/summary_relationship_preference" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/weatherReminder">
+
+        <CheckBoxPreference
+            android:key="weather"
+            android:title="Weather"
+            android:summary="   Check All"/>
+        <CheckBoxPreference
+            android:key="rain"
+            android:title="         Rain" />
+        <CheckBoxPreference
+            android:key="snow"
+            android:title="         Snow" />
+        <CheckBoxPreference
+            android:key="wind"
+            android:title="         Wind" />
+        <CheckBoxPreference
+            android:key="temp"
+            android:title="         Temperature" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

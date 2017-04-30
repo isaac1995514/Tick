@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid
+        android:color = "@color/weather_setting_background" >
+    </solid>
+
+    <stroke
+        android:color="@color/weather_setting_stroke"
+        android:width="10dp"
+        android:dashWidth="5dp"
+        >
+    </stroke>
+
+    <padding
+        android:left="2dp"
+        android:top="2dp"
+        android:right="2dp"
+        android:bottom="2dp"    >
+    </padding>
+
+    <corners
+        android:radius="0dp"   >
+    </corners>
+
+
+</shape>
