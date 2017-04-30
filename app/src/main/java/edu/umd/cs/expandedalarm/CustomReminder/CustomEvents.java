@@ -1,4 +1,4 @@
-package com.example.a436project;
+package edu.umd.cs.expandedalarm.CustomReminder;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static com.example.a436project.EventAdder.NEW_EVENT;
+import edu.umd.cs.expandedalarm.R;
 
 public class CustomEvents extends AppCompatActivity {
 
@@ -93,7 +93,7 @@ public class CustomEvents extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ADD_EVENT_REQUEST) {
             if (resultCode == RESULT_OK) {
-                eventAdapter.add(data.getExtras().get(NEW_EVENT));
+                eventAdapter.add(data.getExtras().get(EventAdder.NEW_EVENT));
             }
         }
     }

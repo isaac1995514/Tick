@@ -14,6 +14,14 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Weather.WeatherActivity" />
         <activity android:name=".UserSetting.PreferenceActivity" />
+        <activity android:name=".CustomReminder.CustomEvents">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CustomReminder.EventAdder">
+        </activity>
+
         <activity android:name=".MainScreen.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

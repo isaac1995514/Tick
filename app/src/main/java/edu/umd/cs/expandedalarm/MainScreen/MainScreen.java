@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import at.markushi.ui.CircleButton;
+import edu.umd.cs.expandedalarm.CustomReminder.CustomEvents;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.Relationship.RelationshipActivity;
@@ -72,6 +73,8 @@ public class MainScreen extends AppCompatActivity {
         customize_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), CustomEvents.class));
 
             }
         });
