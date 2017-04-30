@@ -94,7 +94,16 @@ public class CustomEvents extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ADD_EVENT_REQUEST) {
             if (resultCode == RESULT_OK) {
-                eventAdapter.add(data.getExtras().get(EventAdder.NEW_EVENT));
+                Event newEvent = (Event) data.getExtras().get(EventAdder.NEW_EVENT);
+                eventAdapter.add(newEvent);
+
+                //Create a new intent for the alarm
+                Intent intent = new Intent()
+                        .setAction("ADD_CUSTOM_EVENT")
+                        .putExtra("Event", newEvent);
+
+                sendBroadcast(intent);
+
             }
         }
     }
@@ -117,7 +126,7 @@ public class CustomEvents extends AppCompatActivity {
             Event eventToAdd = (Event) object;
             boolean eventFound = false;
             for (int i = 0; i < events.size(); i++) {
-                if (events.get(i).getEvent_ID().equals(eventToAdd.getEvent_ID())) {
+                if (events.get(i).getEvent_ID() == eventToAdd.getEvent_ID()) {
                     events.remove(i);
                     events.add(eventToAdd);
                     eventFound = true;
@@ -165,7 +174,7 @@ public class CustomEvents extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     for (int i = 0; i < events.size(); i++) {
-                        if (events.get(i).getEvent_ID().equals(event.getEvent_ID()))
+                        if (events.get(i).getEvent_ID() == event.getEvent_ID())
                             events.remove(i);
                     }
                     notifyDataSetChanged();

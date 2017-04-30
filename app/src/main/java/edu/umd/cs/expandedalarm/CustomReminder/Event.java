@@ -5,7 +5,8 @@ import java.util.GregorianCalendar;
 
 public class Event implements Serializable, Comparable<Event> {
     private String event_name, event_description, event_date, event_time, initial_reminder_date,
-            initial_reminder_time, reminder_freq, event_ID;
+            initial_reminder_time, reminder_freq;
+    private int event_ID;
 
     public Event(String event_name, String event_description, String event_date, String event_time,
                  String initial_reminder_date, String initial_reminder_time, String reminder_freq,
@@ -17,7 +18,7 @@ public class Event implements Serializable, Comparable<Event> {
         this.initial_reminder_date = initial_reminder_date;
         this.initial_reminder_time = initial_reminder_time;
         this.reminder_freq = reminder_freq;
-        this.event_ID = event_ID;
+        this.event_ID = event_ID.hashCode();
     }
 
     public Event() {
@@ -80,11 +81,11 @@ public class Event implements Serializable, Comparable<Event> {
         this.reminder_freq = reminder_freq;
     }
 
-    public String getEvent_ID() {
+    public int getEvent_ID() {
         return event_ID;
     }
 
-    public void setEvent_ID(String event_ID) {
+    public void setEvent_ID(int event_ID) {
         this.event_ID = event_ID;
     }
 

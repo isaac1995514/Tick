@@ -184,7 +184,7 @@ public class EventAdder extends AppCompatActivity {
                         Intent intent = new Intent();
                         if (event == null) {
                             event = new Event();
-                            event.setEvent_ID(String.valueOf(UUID.randomUUID()));
+                            event.setEvent_ID(String.valueOf(UUID.randomUUID()).hashCode());
                         }
                         event.setEvent_name(event_name.getText().toString());
                         event.setEvent_description(event_description.getText().toString());
