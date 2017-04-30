@@ -30,7 +30,8 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         if(Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
-            //Currently Not Working
+
+
 
         }else if(intent.getAction() == "UPDATE_WEATHER"){
             WeekDay day = (WeekDay) intent.getSerializableExtra("DayOfWeek");
