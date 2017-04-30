@@ -14,7 +14,7 @@ import java.net.URL;
 public class RemoteFetch {
 
     private static final String OPEN_WEATHER_MAP_API =
-            "http://api.openweathermap.org/data/2.5/weather?APPID=%s&q=%s&units=imperial";
+            "http://api.openweathermap.org/data/2.5/weather?APPID=%s&zip=%s&units=imperial";
 
     private static JSONObject weather_data;
 
