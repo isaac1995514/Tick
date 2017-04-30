@@ -46,7 +46,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
             Event event = (Event) intent.getExtras().get("Event");
 
-            Intent alarmIntent = new Intent().setAction("ADD_CUSTOM_EVENT");
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
                     event.getEvent_ID(),
                     intent, PendingIntent.FLAG_UPDATE_CURRENT);
