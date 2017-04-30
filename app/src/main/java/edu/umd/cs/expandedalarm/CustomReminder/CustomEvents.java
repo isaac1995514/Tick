@@ -42,6 +42,7 @@ public class CustomEvents extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_events);
+        getSupportActionBar().hide();
 
         //Initialize events
         events =  new ArrayList<Event>();

@@ -41,6 +41,7 @@ public class EventAdder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_adder);
+        getSupportActionBar().hide();
 
         if (getIntent().getExtras() != null)
             event = (Event) getIntent().getExtras().getSerializable(EDIT_EVENT);
