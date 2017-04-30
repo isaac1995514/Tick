@@ -37,6 +37,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="UPDATE_WEATHER" />
+                <action android:name="ADD_CUSTOM_EVENT" />
+                <action android:name="REMOVE_CUSTOM_EVENT" />
             </intent-filter>
         </receiver>
         <receiver

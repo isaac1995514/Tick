@@ -19,7 +19,7 @@ public class DependencyFactory {
     private static AlarmManager alarmManager;
     private static SharedPreferences user_preference;
     private static NotificationManager notificationManager;
-
+    private static SharedPreferences user_custom_events;
 
     /**
      * Contain weekDay objects the initialize the Adapter
@@ -72,8 +72,12 @@ public class DependencyFactory {
         }
 
         return notificationManager;
-
     }
+
+//    private static SharedPreferences getUserCustomeEvents() {
+//        if (user)
+//        return user_custom_events;
+//    }
 
 
 }

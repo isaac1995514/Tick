@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 
 public class CustomEvents extends AppCompatActivity {
@@ -55,7 +56,7 @@ public class CustomEvents extends AppCompatActivity {
 
 
         //Initalize Shared Prefrences
-        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        sharedPreferences = DependencyFactory.getUserPreference(CustomEvents.this);
         //Load all the events into the shared preferences
         Set<String> eventsString = sharedPreferences.getStringSet(EVENTS, new TreeSet<String>());
         Gson gson = new Gson();
