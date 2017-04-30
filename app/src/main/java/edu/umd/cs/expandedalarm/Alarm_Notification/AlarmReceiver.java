@@ -45,10 +45,10 @@ public class AlarmReceiver extends BroadcastReceiver {
             AlarmManager alarmManager = DependencyFactory.getAlarmManager(context);
 
             Event event = (Event) intent.getExtras().get("Event");
+            Intent alarmIntent = new Intent().setAction("TEST");
 
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
-                    event.getEvent_ID(),
-                    intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, event.getEvent_ID(),
+                    alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
             Calendar currentTime = Calendar.getInstance();
             Calendar reminderStart = transformTextToDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());

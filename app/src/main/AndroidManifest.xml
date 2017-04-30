@@ -47,6 +47,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="WEATHER_NOTIFICATION" />
+                <action android:name="TEST" />
+
             </intent-filter>
         </receiver>
 
