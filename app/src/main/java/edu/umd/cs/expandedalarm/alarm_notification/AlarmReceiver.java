@@ -37,6 +37,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             Log.d("RECEIVER", "BOOT_COMPLETE");
 
         }else if(intent.getAction().equals("UPDATE_WEATHER")) {
+            Log.d("TEST", "UPDATE_WEATHER_RECEIVED");
             WeekDay day = (WeekDay) intent.getSerializableExtra("DayOfWeek");
             UpdateWeatherAlarmTask task = new UpdateWeatherAlarmTask(context);
             task.execute(day);
@@ -122,6 +123,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                 calendar.add(Calendar.DAY_OF_MONTH, 7);
             }
 
+            Log.d("TEST_WEATHER_TIME", calendar.getTime().toString());
+
             Intent notification = new Intent().setAction("WEATHER_NOTIFICATION");
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context, day.getDay().getValue(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
             alarmManager.cancel(pendingIntent);
@@ -130,6 +133,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             notification = new Intent().setAction("WEATHER_NOTIFICATION");
             pendingIntent = PendingIntent.getBroadcast(context, day.getDay().getValue(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
 
+            Log.d("TEST_WEATHER_SENT", "NOTIFICATION_SENT");
             alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
 
             return calendar;

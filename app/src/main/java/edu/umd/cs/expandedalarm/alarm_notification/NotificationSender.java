@@ -22,8 +22,6 @@ import java.util.TreeSet;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.RemoteFetch;
-import edu.umd.cs.expandedalarm.custom_reminder.Event;
-import edu.umd.cs.expandedalarm.model.RelationshipService;
 
 /**
  * Created by Isaac on 4/20/2017.
@@ -34,6 +32,8 @@ public class NotificationSender extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        Log.d("TEST", "onReceive Reached");
 
         if (intent.getAction().equals("CUSTOM_REMINDER_NOTIFICATION")) {
             NotificationManager manager =
@@ -117,6 +117,9 @@ public class NotificationSender extends BroadcastReceiver {
 
         }
         else if (intent.getAction().equals("WEATHER_NOTIFICATION")){
+
+            Log.d("TEST", "WEATHER_NOTIFICATION_RECEIVED");
+
             boolean hot = false, cold = false, raining = false, snowing = false, windy = false;
             double temp = 1000, mintemp = 1000, maxtemp = 1000, speed = 1000;
             String rainDescription = "", snowDescription = "";
