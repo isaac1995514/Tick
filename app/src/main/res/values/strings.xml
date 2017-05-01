@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">Group Project</string>
+    <string name="notification">Notifications</string>
+    <string name="weather_choices">RAIN\nSNOW\nWIND\nTEMP</string>
+    <string name="temp">&lt;TEMP&lt;</string>
+    <string name="on_off">OFF | ON</string>
+    <string name="open_weather_maps_app_id">f4cc1cbac1f6c83ee4d378b319a3bd26</string>
+
+
+    <!-- Time Setting Screen -->
+    <string name="name_label">Preference</string>
+
+
+    <!-- User Preference -->
+    <string name="user_preference_title">User Preference</string>
+    <string name="title_user_name_preference">User</string>
+    <string name="title_zip_code_preference">Zip Code</string>
+    <string name="title_relationship_preference">In relationship</string>
+    <string name="summary_user_name_preference">Please enter your name</string>
+    <string name="summary_zip_code_preference">Please enter you zip code</string>
+    <string name="summary_relationship_preference">Are you in a relationship?</string>
+
+    <!-- Valentine -->
+    <string name="valentine">Valentine</string>
+    <string name="relationship_christmas">Christmas</string>
+    <string name="relationship_birthday">Birthday</string>
+    <string name="relationship_anniversary">Anniversary</string>
+    <string name="relationship_valentine">Valentine\'s Day</string>
+    <string name="relationship_father_birthday">Dad\'s B-Day</string>
+    <string name="relationship_mother_birthday">Mom\'s B-Day</string>
+
+
+    <!-- Weather Reminder -->
+    <string name="weatherReminder">Weather Reminder</string>
+
+    <!-- Main Screen -->
+    <string name="weather">WEATHER</string>
+    <string name="relationship">RELATIONSHIP</string>
+    <string name="customize">CUSTOMIZE</string>
+    <string name="user_setting">USER SETTING</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Custom Events Strings-->
+    <string name="add_event">Add Event</string>
+    <string name="custom_events">Your Custom Events:</string>
+
+    <!--Event Adder Strings-->
+    <string name="add_an_event">Add an Event:</string>
+    <string name="event_name">Event Name:</string>
+    <string name="event_description">Event description:</string>
+    <string name="event_date">Select Event Date:</string>
+    <string name="event_time">Select Event Time:</string>
+    <string name="initial_reminder_date">Initial Reminder Date:</string>
+    <string name="initial_reminder_time">Initial Reminder Time:</string>
+    <string name="later_reminders">Remind me:</string>
+
+    <string-array name="reminder_alarm">
+        <item>Just once</item>
+        <item>Every hour</item>
+        <item>Every 3 hours</item>
+        <item>Every 6 hours</item>
+        <item>Every 12 hours</item>
+        <item>Every 24 hours</item>
+    </string-array>
+
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+
+    <string name="event_name_reminder">You forgot to name your event!</string>
+    <string name="event_description_reminder">Please write a short description of your event!</string>
+    <string name="date_reminder">You forgot to select a date for your event!</string>
+    <string name="time_reminder">You forgot to select a time for your event!</string>
+    <string name="initial_date_reminder">Please select the initial date you\'d like to be reminded about your event!</string>
+    <string name="initial_time_reminder">Please select the initial time you\'d like to be reminded about your event!</string>
+    <string name="reminder_date_error">Your initial reminder is scheduled on or after the event has occurred! Please shcedule an earlier reminder.</string>
+    <string name="ok">OK</string>
+
+    <!--Single Custom Event-->
+    <string name="single_event_name">Event Name:</string>
+    <string name="single_event_date">Event Date:</string>
+    <color name="light_red">#fcefef</color>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name = "colorPrimary">#f1f6fc</color>
+    <color name = "colorPrimaryDark">#b3ab90</color>
+    <color name = "colorAccent">#454869</color>
+    <color name = "colorControlNormal">#b1b6c9</color>
+
+
+    <!-- WeatherFragment -->
+    <color name = "weather_setting_background">#e5f4f9</color>
+    <color name = "weather_setting_font">#2f8db3</color>
+    <color name = "weather_setting_stroke">#8dc6d9</color>
+
+
+    <!-- Main Screen -->
+    <color name = "light_pink">#fbe2f3</color>
+    <color name = "light_purple_pink">#f2d4ef</color>
+    <color name = "light_pink_75">#75fbe2f3</color>
+    <color name = "pink">#d18898</color>
+    <color name = "light_blue">#ccdbea</color>
+    <color name = "blue_50">#50508ebf</color>
+    <color name = "blue">#508ebf</color>
+    <color name = "light_orange">#f9dc86</color>
+    <color name = "orange">#ffa517</color>
+    <color name = "light_gray">#cfc5c5</color>
+    <color name = "gray">#4a464a</color>
+
+
+</resources>
