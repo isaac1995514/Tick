@@ -1,4 +1,4 @@
-package edu.umd.cs.expandedalarm.CustomReminder;
+package edu.umd.cs.expandedalarm.custom_reminder;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -22,7 +22,7 @@ import java.util.UUID;
 
 import edu.umd.cs.expandedalarm.R;
 
-import static edu.umd.cs.expandedalarm.CustomReminder.CustomEvents.EDIT_EVENT;
+import static edu.umd.cs.expandedalarm.custom_reminder.CustomEvents.EDIT_EVENT;
 
 public class EventAdder extends AppCompatActivity {
 

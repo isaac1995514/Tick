@@ -1,4 +1,4 @@
-package edu.umd.cs.expandedalarm.CustomReminder;
+package edu.umd.cs.expandedalarm.custom_reminder;
 
 import java.io.Serializable;
 import java.util.GregorianCalendar;
