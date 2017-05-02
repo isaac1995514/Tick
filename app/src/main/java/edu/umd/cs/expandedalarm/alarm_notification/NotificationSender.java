@@ -22,6 +22,7 @@ import java.util.TreeSet;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.RemoteFetch;
+import edu.umd.cs.expandedalarm.model.RelationshipService;
 
 /**
  * Created by Isaac on 4/20/2017.
@@ -80,39 +81,36 @@ public class NotificationSender extends BroadcastReceiver {
                 alarmManager.cancel(pendingIntent);
                 pendingIntent.cancel();
 
-            }else{
-                //Code here. Steven
-
-                /* Testing
+            } else {
                 RelationshipService relationshipService = new RelationshipService(context);
 
                 String date = (String) intent.getSerializableExtra("DATE");
                 String[] f_date = relationshipService.getPrintableDate(date);
 
-                Log.d("TEST_NOTIFICATION", f_date[2] + " " + f_date[1] + " " + f_date[0]);
+                int id = (int)intent.getSerializableExtra("ID");
 
-                */
+                Log.d("TEST_NOTIFICATION", f_date[2] + " " + f_date[1] + " " + f_date[0]);
 
                 NotificationManager manager =
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-                SharedPreferences pref = DependencyFactory.getUserPreference(context);
+                int dayRemainder = 1;
+                if (stop != null) {
+                    long diff = (stop.getTime().getTime() - calendar.getTime().getTime());
+                    dayRemainder = (int) (diff / (1000 * 60 * 60 * 24)) + 1;
+                }
 
-                String id = intent.getStringExtra("id");
-                pref.getString(id,"");
-                String context_text = "", context_text2 = "";
-
+                String context_text2 = f_date[2] + " " + f_date[1] + " " + f_date[0]
+                                + "\n" + dayRemainder + " MORE DAY(S)!";
 
                 Notification notification = new Notification.Builder(context)
                         .setSmallIcon(R.drawable.ic_relationship)
-                        .setContentTitle(context_text)
-                        .setTicker(context_text)
+                        .setContentTitle(date)
+                        .setTicker(date)
                         .setStyle(new Notification.BigTextStyle().bigText(context_text2))
                         .setContentText(context_text2)
                         .build();
-                manager.notify(2,notification);
-
-
+                manager.notify(id,notification);
             }
 
         }
@@ -266,9 +264,7 @@ public class NotificationSender extends BroadcastReceiver {
             manager.notify(3,notification);
 
         }else{
-
-
-
+            Log.e("ERROR","incorrect action");
         }
     }
 }
