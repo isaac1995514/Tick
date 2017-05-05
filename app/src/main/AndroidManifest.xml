@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.umd.cs.expandedalarm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".weather.WeatherActivity" />
+        <activity android:name=".user_setting.PreferenceActivity" />
+        <activity android:name=".custom_reminder.CustomEvents"/>
+        <activity android:name=".custom_reminder.EventAdder"/>
+
+
+        <activity android:name=".main_screen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <receiver
+            android:name=".alarm_notification.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="UPDATE_WEATHER" />
+                <action android:name="UPDATE_RELATIONSHIP"/>
+                <action android:name="ADD_CUSTOM_EVENT" />
+                <action android:name="REMOVE_CUSTOM_EVENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".alarm_notification.NotificationSender"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="WEATHER_NOTIFICATION" />
+                <action android:name="RELATIONSHIP_NOTIFICATION" />
+                <action android:name="CUSTOM_EVENT_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".relationship.RelationshipActivity"></activity>
+    </application>
+
+</manifest>
