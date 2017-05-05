@@ -22,6 +22,7 @@ import java.util.TreeSet;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.RemoteFetch;
+import edu.umd.cs.expandedalarm.custom_reminder.Event;
 import edu.umd.cs.expandedalarm.model.RelationshipService;
 
 /**
@@ -36,32 +37,41 @@ public class NotificationSender extends BroadcastReceiver {
 
         Log.d("TEST", "onReceive Reached");
 
-        if (intent.getAction().equals("CUSTOM_REMINDER_NOTIFICATION")) {
-            NotificationManager manager =
-                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (intent.getAction().equals("CUSTOM_EVENT_NOTIFICATION")) {
+            Log.d("fasdasfada", "osafafsaadsad");
+            Event event = (Event)intent.getSerializableExtra("Event");
+            Calendar reminderStart = Event.transformTextToDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
 
-            SharedPreferences pref = DependencyFactory.getUserPreference(context);
-            Set<String> eventsString = pref.getStringSet(EVENTS, new TreeSet<String>());
+            if (reminderStart.getTime().before( Calendar.getInstance().getTime())){
+                Log.d("Cancel","cancelling");
+                //Test if alarm needs to cancel
+                AlarmManager alarmManager = DependencyFactory.getAlarmManager(context);
 
-            Gson gson = new Gson();
-            /*
-            String context_text = "", context_text2 = "";
-            for (String s: eventsString) {
-                Event event = gson.fromJson(s, Event.class);
-                if (event.getEvent_ID().equals(intent.getStringExtra("id")))
-                    context_text = event.getEvent_name();
-                context_text2 = event.getEvent_description();
+                Intent notification = new Intent();
+                notification.setAction("RELATIONSHIP_NOTIFICATION");
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, event.getEvent_ID(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                alarmManager.cancel(pendingIntent);
+                pendingIntent.cancel();
+
             }
-            Notification notification = new Notification.Builder(context)
-                    .setSmallIcon(R.drawable.ic_calander)
-                    .setContentTitle(context_text)
-                    .setTicker(context_text)
-                    .setStyle(new Notification.BigTextStyle().bigText(context_text2))
-                    .setContentText(context_text2)
-                    .build();
-            manager.notify(1,notification);
+            else {
+                NotificationManager manager =
+                        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-            */
+
+                String context_text = event.getEvent_name();
+                String context_text2 = event.getEvent_description();
+
+                Notification notification = new Notification.Builder(context)
+                        .setSmallIcon(R.drawable.ic_calander)
+                        .setContentTitle(context_text)
+                        .setTicker(context_text)
+                        .setStyle(new Notification.BigTextStyle().bigText(context_text2))
+                        .setContentText(context_text2)
+                        .build();
+                manager.notify(1, notification);
+            }
         }
         else if (intent.getAction().equals("RELATIONSHIP_NOTIFICATION")) {
 
@@ -101,7 +111,7 @@ public class NotificationSender extends BroadcastReceiver {
                 }
 
                 String context_text2 = f_date[2] + " " + f_date[1] + " " + f_date[0]
-                                + "\n" + dayRemainder + " MORE DAY(S)!";
+                                + "\n" + dayRemainder + " MORE DAY(S)";
 
                 Notification notification = new Notification.Builder(context)
                         .setSmallIcon(R.drawable.ic_relationship)

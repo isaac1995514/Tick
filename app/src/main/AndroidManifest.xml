@@ -10,7 +10,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity android:name=".weather.WeatherActivity" />
         <activity android:name=".user_setting.PreferenceActivity" />
         <activity android:name=".custom_reminder.CustomEvents"/>
@@ -44,7 +43,7 @@
             <intent-filter>
                 <action android:name="WEATHER_NOTIFICATION" />
                 <action android:name="RELATIONSHIP_NOTIFICATION" />
-                <action android:name="TEST" />
+                <action android:name="CUSTOM_EVENT_NOTIFICATION" />
             </intent-filter>
         </receiver>
 

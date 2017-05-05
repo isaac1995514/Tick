@@ -170,9 +170,9 @@ public class EventAdder extends AppCompatActivity {
 
                 if (validEntries) {
 
-                    GregorianCalendar c1 = transformTextToDate(event_date.getText().toString(),
+                    GregorianCalendar c1 = Event.transformTextToDate(event_date.getText().toString(),
                             event_time.getText().toString());
-                    GregorianCalendar c2 = transformTextToDate(
+                    GregorianCalendar c2 = Event.transformTextToDate(
                             initial_reminder_date.getText().toString(),
                             initial_reminder_time.getText().toString());
 
@@ -249,19 +249,6 @@ public class EventAdder extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
-    }
-
-    private GregorianCalendar transformTextToDate(String strDate, String strTime) {
-        int day, month, year, hours, minutes;
-        month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/")));
-        day = Integer.parseInt(strDate.substring(strDate.indexOf("/") + 1, strDate.lastIndexOf("/")));
-        year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length() -1));
-        hours = Integer.parseInt(strTime.substring(0, strTime.indexOf(":")));
-        minutes = Integer.parseInt(strTime.substring(strTime.indexOf(":") + 2, strTime.indexOf(":") + 4));
-        if (strTime.contains("pm"))
-            hours += 12;
-        GregorianCalendar calendar = new GregorianCalendar(year, month, day, hours, minutes);
-        return calendar;
     }
 
 
