@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.umd.cs.expandedalarm.relationship.RelationshipFragment"
+    android:background="@drawable/pink_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/birthday"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:drawableTop="@drawable/birthday_icon"
+            android:text="@string/relationship_birthday"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/anniversary"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:drawableTop="@drawable/anniversary_icon"
+            android:text="@string/relationship_anniversary"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="12sp"
+            >
+        </Button>
+        
+        <Button
+            android:id="@+id/valentine"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:drawableTop="@drawable/valentine_icon"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:text="@string/relationship_valentine"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="12sp"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/christmas"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:drawableTop="@drawable/christmas_icon"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:text="@string/relationship_christmas"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+
+            >
+
+        </Button>
+
+        <Button
+            android:id="@+id/father_birthday"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:drawableTop="@drawable/father_birthday_icon"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:text="@string/relationship_father_birthday"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+            >
+
+        </Button>
+
+        <Button
+            android:id="@+id/mother_birthday"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/relationship_button"
+            android:layout_margin="7dp"
+            android:drawableTop="@drawable/mother_birthday_icon"
+            android:text="@string/relationship_mother_birthday"
+            android:textColor="@color/light_pink_75"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="12sp"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+
+</LinearLayout>
