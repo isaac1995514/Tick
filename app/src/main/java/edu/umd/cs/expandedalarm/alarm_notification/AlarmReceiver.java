@@ -264,8 +264,4 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         }
     }
-
-
-
-
 }
