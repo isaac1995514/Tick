@@ -1,6 +1,9 @@
 package edu.umd.cs.expandedalarm.custom_reminder;
 
+import android.util.Log;
+
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Event implements Serializable, Comparable<Event> {
@@ -91,6 +94,7 @@ public class Event implements Serializable, Comparable<Event> {
 
     public static GregorianCalendar transformTextToDate(String strDate, String strTime) {
         int day, month, year, hours, minutes;
+
         month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/")));
         day = Integer.parseInt(strDate.substring(strDate.indexOf("/") + 1, strDate.lastIndexOf("/")));
         year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length()));
@@ -99,6 +103,31 @@ public class Event implements Serializable, Comparable<Event> {
         if (strTime.contains("pm"))
             hours += 12;
         GregorianCalendar calendar = new GregorianCalendar(year, month, day, hours, minutes);
+        return calendar;
+    }
+
+    public static Calendar getCalenderDate(String strDate, String strTime){
+        int day, month, year, hours, minutes;
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.SECOND, 0);
+        minutes = Integer.parseInt(strTime.substring(strTime.indexOf(":") + 2, strTime.indexOf(":") + 4));
+        Log.d("tftt_minute", Integer.toString(minutes));
+        calendar.set(Calendar.MINUTE, minutes);
+        hours = Integer.parseInt(strTime.substring(0, strTime.indexOf(":")));
+        Log.d("tftt_hour", Integer.toString(hours));
+        calendar.set(Calendar.HOUR, hours);
+        day = Integer.parseInt(strDate.substring(strDate.indexOf("/") + 1, strDate.lastIndexOf("/")));
+        Log.d("tftt_day", Integer.toString(day));
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/")));
+        Log.d("tftt_month",Integer.toString(month));
+        calendar.set(Calendar.MONTH, month);
+        year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length()));
+        Log.d("tftt_year", Integer.toString(year));
+        calendar.set(Calendar.YEAR, year);
+
         return calendar;
     }
 

@@ -10,14 +10,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.google.gson.Gson;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Calendar;
-import java.util.Set;
-import java.util.TreeSet;
 
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
@@ -42,7 +38,7 @@ public class NotificationSender extends BroadcastReceiver {
             Event event = (Event)intent.getSerializableExtra("Event");
             Calendar reminderStart = Event.transformTextToDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
 
-            if (reminderStart.getTime().before( Calendar.getInstance().getTime())){
+            if (reminderStart.getTime().after( Calendar.getInstance().getTime())){
                 Log.d("Cancel","cancelling");
                 //Test if alarm needs to cancel
                 AlarmManager alarmManager = DependencyFactory.getAlarmManager(context);

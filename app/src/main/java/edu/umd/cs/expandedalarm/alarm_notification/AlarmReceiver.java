@@ -10,8 +10,6 @@ import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.concurrent.TimeUnit;
 
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.custom_reminder.Event;
@@ -55,8 +53,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                     alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             Log.d("sad",event.getInitial_reminder_date());
             Log.d("sad",event.getInitial_reminder_time());
-            Calendar reminderStart = Event.transformTextToDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
-            Log.d("sfa",String.valueOf(reminderStart.getTime().toString()));
+            Calendar reminderStart = Event.getCalenderDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
+            Log.d("sfa",reminderStart.getTime().toString());
             if (event.getReminder_freq().equals("Just once")) {
                 Log.d("sd","dsa");
                 alarmManager.set(AlarmManager.RTC, reminderStart.getTimeInMillis(), pendingIntent);
