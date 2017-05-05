@@ -234,7 +234,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 calendar.add(Calendar.MINUTE, -1); //In case delay
                 pendingIntent = PendingIntent.getBroadcast(context, id, notification, PendingIntent.FLAG_UPDATE_CURRENT);
                 calendar.add(Calendar.DAY_OF_YEAR, -dayRemainder);
-                alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 60 * 1000 * 60 * 24, pendingIntent);
                     //calendar.add(Calendar.MINUTE, -5);
                     //Log.d("TEST_START",calendar.getTime().toString());
                     //alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),60 * 1000, pendingIntent);
@@ -245,7 +245,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 calendar.add(Calendar.MINUTE, -1); //In case delay
                 pendingIntent = PendingIntent.getBroadcast(context, id, notification, PendingIntent.FLAG_UPDATE_CURRENT);
                 calendar.add(Calendar.DAY_OF_YEAR, -5);
-                alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 60 * 1000 * 60 * 24, pendingIntent);
                     //alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),60 * 1000, pendingIntent);
 
             }
