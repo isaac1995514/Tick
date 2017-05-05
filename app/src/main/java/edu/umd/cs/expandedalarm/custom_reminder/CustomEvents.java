@@ -175,13 +175,8 @@ public class CustomEvents extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     for (int i = 0; i < events.size(); i++) {
-                        if (events.get(i).getEvent_ID() == event.getEvent_ID()) {
-                            Intent intent = new Intent()
-                                    .setAction("REMOVE_CUSTOM_EVENT")
-                                    .putExtra("Event",events.get(i));
-                            sendBroadcast(intent);
+                        if (events.get(i).getEvent_ID() == event.getEvent_ID())
                             events.remove(i);
-                        }
                     }
                     notifyDataSetChanged();
                 }

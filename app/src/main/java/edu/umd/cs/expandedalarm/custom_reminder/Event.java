@@ -89,11 +89,11 @@ public class Event implements Serializable, Comparable<Event> {
         this.event_ID = event_ID;
     }
 
-    public static GregorianCalendar transformTextToDate(String strDate, String strTime) {
+    private GregorianCalendar transformTextToDate(String strDate, String strTime) {
         int day, month, year, hours, minutes;
         month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/")));
         day = Integer.parseInt(strDate.substring(strDate.indexOf("/") + 1, strDate.lastIndexOf("/")));
-        year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length()));
+        year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length() -1));
         hours = Integer.parseInt(strTime.substring(0, strTime.indexOf(":")));
         minutes = Integer.parseInt(strTime.substring(strTime.indexOf(":") + 2, strTime.indexOf(":") + 4));
         if (strTime.contains("pm"))
