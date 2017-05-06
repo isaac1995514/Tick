@@ -12,9 +12,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".weather.WeatherActivity" />
         <activity android:name=".user_setting.PreferenceActivity" />
-        <activity android:name=".custom_reminder.CustomEvents"/>
-        <activity android:name=".custom_reminder.EventAdder"/>
-
+        <activity android:name=".relationship.RelationshipActivity" />
+        <activity android:name=".custom_reminder.CustomEvents" />
+        <activity android:name=".custom_reminder.EventAdder" />
 
         <activity android:name=".main_screen.MainScreen">
             <intent-filter>
@@ -24,18 +24,18 @@
             </intent-filter>
         </activity>
 
-
         <receiver
             android:name=".alarm_notification.AlarmReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="UPDATE_WEATHER" />
-                <action android:name="UPDATE_RELATIONSHIP"/>
+                <action android:name="UPDATE_RELATIONSHIP" />
                 <action android:name="ADD_CUSTOM_EVENT" />
                 <action android:name="REMOVE_CUSTOM_EVENT" />
             </intent-filter>
         </receiver>
+
         <receiver
             android:name=".alarm_notification.NotificationSender"
             android:enabled="true"
@@ -47,7 +47,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".relationship.RelationshipActivity"></activity>
     </application>
 
 </manifest>
