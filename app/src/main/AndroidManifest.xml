@@ -15,7 +15,10 @@
         <activity android:name=".relationship.RelationshipActivity" />
         <activity android:name=".custom_reminder.CustomEvents" />
         <activity android:name=".custom_reminder.EventAdder" />
-
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:label="@string/title_activity_onboarding"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".main_screen.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +38,6 @@
                 <action android:name="REMOVE_CUSTOM_EVENT" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".alarm_notification.NotificationSender"
             android:enabled="true"

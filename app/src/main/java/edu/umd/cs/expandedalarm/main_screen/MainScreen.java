@@ -12,12 +12,12 @@ import at.markushi.ui.CircleButton;
 import edu.umd.cs.expandedalarm.DependencyFactory;
 import edu.umd.cs.expandedalarm.R;
 import edu.umd.cs.expandedalarm.custom_reminder.CustomEvents;
+import edu.umd.cs.expandedalarm.onboarding.OnboardingActivity;
 import edu.umd.cs.expandedalarm.relationship.RelationshipActivity;
 import edu.umd.cs.expandedalarm.user_setting.PreferenceActivity;
 import edu.umd.cs.expandedalarm.weather.WeatherActivity;
 
 public class MainScreen extends AppCompatActivity {
-
     SharedPreferences userPreference;
     TextView weather_text;
     TextView relationship_text;
@@ -32,6 +32,14 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        userPreference = DependencyFactory.getUserPreference(getApplicationContext());
+
+        if (userPreference.getBoolean("first_run", true)) {
+            Intent intent = new Intent(this, OnboardingActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
 
         setContentView(R.layout.activity_main_screen);
         getSupportActionBar().hide();
@@ -93,15 +101,11 @@ public class MainScreen extends AppCompatActivity {
         });
 
         setUpRelationAlarm();
-
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-
-        userPreference = DependencyFactory.getUserPreference(getApplicationContext());
-
 
         if(!userPreference.getBoolean("relationship", false)){
             relationship_button.setEnabled(false);

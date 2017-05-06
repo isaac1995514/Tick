@@ -25,5 +25,17 @@
     <color name = "light_gray">#cfc5c5</color>
     <color name = "gray">#4a464a</color>
 
+    <!-- Onboarding -->
+    <color name="white_primary">#ffffffff</color>
+    <color name="white_secondary">#b3ffffff</color>
+    <color name="white_hint">#66ffffff</color>
+    <color name="white_divider">#31ffffff</color>
+    <color name="switch_relationship_on">#9a0007</color>
+    <color name="switch_weather_on">#004ba0</color>
+    <color name="background_welcome">#ffa726</color>
+    <color name="background_personal">#66bb6a</color>
+    <color name="background_relationship">#ef5350</color>
+    <color name="background_weather">#42a5f5</color>
+    <color name="background_summary">#ffa726</color>
 
 </resources>

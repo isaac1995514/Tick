@@ -72,5 +72,51 @@
     <string name="single_event_name">Event Name:</string>
     <string name="single_event_date">Event Date:</string>
     <color name="light_red">#fcefef</color>
+    <string name="title_activity_onboarding">OnboardingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- Onboarding Welcome -->
+    <string name="onboard_welcome_title">Welcome to Tick!</string>
+    <string name="onboard_welcome_subtitle">In order to get you started, we need a little bit of information from you.</string>
+    <string name="onboard_finish">Finish</string>
+
+    <!-- Onboarding Personal -->
+    <string name="onboard_personal_title">Personal</string>
+    <string name="onboard_personal_subtitle">Just a little bit to make Tick more personal.</string>
+    <string name="onboard_personal_name_label">Name</string>
+    <string name="onboard_personal_name_hint">Jane Doe</string>
+    <string name="onboard_personal_zip_label">Zipcode</string>
+    <string name="onboard_personal_zip_hint">12345</string>
+
+    <!-- Onboarding Relationship -->
+    <string name="onboard_relationship_title">Relationships</string>
+    <string name="onboard_relationship_subtitle">For events related to those close to you.</string>
+    <string name="onboard_relationship_prompt">Enable relationship reminders</string>
+
+    <!-- Onboarding Weather -->
+    <string name="onboard_weather_title">Weather</string>
+    <string name="onboard_weather_subtitle">So you never get caught off-guard by nature.</string>
+    <string name="onboard_weather_prompt">Which weather conditions would you like to receive notifications for?</string>
+    <string name="onboard_weather_rain_label">Rain</string>
+    <string name="onboard_weather_snow_label">Snow</string>
+    <string name="onboard_weather_wind_label">Wind</string>
+    <string name="onboard_weather_temperature_label">Temperature</string>
+
+    <!-- Onboarding Summary -->
+    <string name="onboard_summary_title">Review</string>
+    <string name="onboard_summary_subtitle">This is the information you provided us. If everything looks good, you\'re good to go!</string>
+    <string name="onboard_summary_note">If you ever want to change any of this information, you can do so in the User Settings section.</string>
+    <string name="onboard_summary_info_label">Your Information</string>
+    <string name="onboard_summary_relationship_enabled">Relationship reminders enabled</string>
+    <string name="onboard_summary_rain_enabled">Rain reminders enabled</string>
+    <string name="onboard_summary_snow_enabled">Snow reminders enabled</string>
+    <string name="onboard_summary_wind_enabled">Wind reminders enabled</string>
+    <string name="onboard_summary_temperature_enabled">Temperature reminders enabled</string>
+    <string name="onboard_summary_relationship_disabled">Relationship reminders disabled</string>
+    <string name="onboard_summary_rain_disabled">Rain reminders disabled</string>
+    <string name="onboard_summary_snow_disabled">Snow reminders disabled</string>
+    <string name="onboard_summary_wind_disabled">Wind reminders disabled</string>
+    <string name="onboard_summary_temperature_disabled">Temperature reminders disabled</string>
 
 </resources>

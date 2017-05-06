@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/subtitle"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/onboard_weather_title"
+        android:textColor="@color/white_primary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/input_layout"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/onboard_weather_subtitle"
+        android:textColor="@color/white_primary"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="130dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/onboard_weather_prompt"
+            android:textColor="@color/white_secondary"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="@string/onboard_weather_rain_label"
+                android:textColor="@color/white_primary"
+                android:textSize="18sp" />
+
+            <Switch
+                android:id="@+id/rain_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.Onboarding.Weather.Switch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="@string/onboard_weather_snow_label"
+                android:textColor="@color/white_primary"
+                android:textSize="18sp" />
+
+            <Switch
+                android:id="@+id/snow_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.Onboarding.Weather.Switch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="@string/onboard_weather_wind_label"
+                android:textColor="@color/white_primary"
+                android:textSize="18sp" />
+
+            <Switch
+                android:id="@+id/wind_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.Onboarding.Weather.Switch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="@string/onboard_weather_temperature_label"
+                android:textColor="@color/white_primary"
+                android:textSize="18sp" />
+
+            <Switch
+                android:id="@+id/temperature_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.Onboarding.Weather.Switch" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
