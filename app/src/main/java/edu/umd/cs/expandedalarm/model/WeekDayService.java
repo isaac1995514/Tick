@@ -22,12 +22,10 @@ import edu.umd.cs.expandedalarm.DependencyFactory;
  *     value: WeekDay object {From Sunday(1) to Saturday(7)}
  */
 public class WeekDayService {
-    private Context context;
     private HashMap<Integer, WeekDay> weekDayHash;
     private ScheduleService scheduleService;
 
     public WeekDayService(Context context) {
-        this.context = context;
         this.weekDayHash = new HashMap<Integer, WeekDay>();
         this.scheduleService = DependencyFactory.getScheduleService(context);
 
