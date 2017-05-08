@@ -101,6 +101,7 @@ public class OnboardingActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = DependencyFactory.getUserPreference(OnboardingActivity.this).edit();
                 editor.putString("user_name", name);
                 editor.putString("zip_code", zipcode);
+                editor.putBoolean("relationship", relationshipReminder);
                 editor.putBoolean("rain", rainReminder);
                 editor.putBoolean("snow", snowReminder);
                 editor.putBoolean("wind", windReminder);
