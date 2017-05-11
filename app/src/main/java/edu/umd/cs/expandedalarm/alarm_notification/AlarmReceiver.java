@@ -54,25 +54,31 @@ public class AlarmReceiver extends BroadcastReceiver {
             Log.d("sad",event.getInitial_reminder_date());
             Log.d("sad",event.getInitial_reminder_time());
             Calendar reminderStart = Event.getCalenderDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
-            Log.d("sfa",reminderStart.getTime().toString());
+            Log.d("EVENT","Time Set: " + reminderStart.getTime().toString());
+            Log.d("EVENT","Frequency: " + event.getReminder_freq());
+            Log.d("EVENT","Match just once" + Boolean.toString(event.getReminder_freq().equals("Just once")));
+            Log.d("EVENT","Match one hour" + Boolean.toString(event.getReminder_freq().equals("Every hour")));
+
+
             if (event.getReminder_freq().equals("Just once")) {
-                Log.d("sd","dsa");
+                Log.d("EVENT","Just once notification");
                 alarmManager.set(AlarmManager.RTC, reminderStart.getTimeInMillis(), pendingIntent);
             }
             else if (event.getReminder_freq().equals("Every hour")) {
-                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), AlarmManager.INTERVAL_HOUR, pendingIntent);
+                Log.d("EVENT", "One Hour notification");
+                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), 60 * 1000 * 60, pendingIntent);
             }
             else if (event.getReminder_freq().equals("Every 3 hours")) {
-                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), AlarmManager.INTERVAL_HOUR * 3, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), 60 * 1000 * 60 * 3, pendingIntent);
             }
             else if (event.getReminder_freq().equals("Every 6 hours")) {
-                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), AlarmManager.INTERVAL_HOUR * 6, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), 60 * 1000 * 60 * 6, pendingIntent);
             }
             else if (event.getReminder_freq().equals("Every 12 hours")) {
-                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), AlarmManager.INTERVAL_HOUR * 12, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), 60 * 1000 * 60 * 12, pendingIntent);
             }
             else if (event.getReminder_freq().equals("Every 24 hours")) {
-                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), AlarmManager.INTERVAL_HOUR * 24, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, reminderStart.getTimeInMillis(), 60 * 1000 * 60 * 24, pendingIntent);
             }
         }else if (intent.getAction().equals("REMOVE_CUSTOM_EVENT")) {
             AlarmManager alarmManager = DependencyFactory.getAlarmManager(context);

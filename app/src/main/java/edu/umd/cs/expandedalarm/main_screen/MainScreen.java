@@ -1,10 +1,12 @@
 package edu.umd.cs.expandedalarm.main_screen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -101,6 +103,7 @@ public class MainScreen extends AppCompatActivity {
         });
 
         setUpRelationAlarm();
+        userPreferenceTesting(getApplicationContext());
     }
 
     @Override
@@ -130,6 +133,18 @@ public class MainScreen extends AppCompatActivity {
         christmas.putExtra("ID", R.id.christmas);
         sendBroadcast(christmas);
 
+    }
+
+    private void userPreferenceTesting(Context context){
+        SharedPreferences s = DependencyFactory.getUserPreference(context);
+
+        Log.d("USER_NAME", s.getString("user_name", "null"));
+        Log.d("USER_ZIP", s.getString("zip_code", "null"));
+        Log.d("USER_RELATIONSHIP", Boolean.toString(s.getBoolean("relationship", false)));
+        Log.d("USER_RAIN", Boolean.toString(s.getBoolean("rain", false)));
+        Log.d("USER_SNOW", Boolean.toString(s.getBoolean("snow", false)));
+        Log.d("USER_WIND", Boolean.toString(s.getBoolean("wind", false)));
+        Log.d("USER_TEMP", Boolean.toString(s.getBoolean("temp", false)));
 
     }
 }

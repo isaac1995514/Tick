@@ -121,7 +121,7 @@ public class Event implements Serializable, Comparable<Event> {
         day = Integer.parseInt(strDate.substring(strDate.indexOf("/") + 1, strDate.lastIndexOf("/")));
         Log.d("tftt_day", Integer.toString(day));
         calendar.set(Calendar.DAY_OF_MONTH, day);
-        month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/")));
+        month = Integer.parseInt(strDate.substring(0, strDate.indexOf("/"))) - 1;
         Log.d("tftt_month",Integer.toString(month));
         calendar.set(Calendar.MONTH, month);
         year = Integer.parseInt(strDate.substring(strDate.lastIndexOf("/") + 1, strDate.length()));

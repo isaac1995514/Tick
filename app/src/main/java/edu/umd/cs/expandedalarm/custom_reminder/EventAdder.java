@@ -73,7 +73,7 @@ public class EventAdder extends AppCompatActivity {
                 new DatePickerDialog(EventAdder.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        event_date.setText(month + "/" + dayOfMonth + "/" + year);
+                        event_date.setText((month + 1) + "/" + dayOfMonth + "/" + year);
                     }
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH)).show();
@@ -96,7 +96,7 @@ public class EventAdder extends AppCompatActivity {
                 new DatePickerDialog(EventAdder.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        initial_reminder_date.setText(month + "/" + dayOfMonth + "/" + year);
+                        initial_reminder_date.setText((month + 1) + "/" + dayOfMonth + "/" + year);
                     }
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH)).show();

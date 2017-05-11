@@ -36,15 +36,20 @@ public class NotificationSender extends BroadcastReceiver {
         if (intent.getAction().equals("CUSTOM_EVENT_NOTIFICATION")) {
             Log.d("fasdasfada", "osafafsaadsad");
             Event event = (Event)intent.getSerializableExtra("Event");
-            Calendar reminderStart = Event.transformTextToDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
+            Calendar eventTime = Event.getCalenderDate(event.getEvent_date(), event.getEvent_time());
+            Calendar startTime = Event.getCalenderDate(event.getInitial_reminder_date(), event.getInitial_reminder_time());
+            Log.d("EVENT", "EVENT DATE" + event.getEvent_date());
+            Log.d("EVENT", "EVENT_TIME" + event.getEvent_time());
+            Log.d("EVENT", "INITIAL DATE" + event.getInitial_reminder_date());
+            Log.d("EVENT", "INITIAL_TIME" + event.getInitial_reminder_time());
 
-            if (reminderStart.getTime().after( Calendar.getInstance().getTime())){
+            if (eventTime.getTime().before(Calendar.getInstance().getTime())){
                 Log.d("Cancel","cancelling");
                 //Test if alarm needs to cancel
                 AlarmManager alarmManager = DependencyFactory.getAlarmManager(context);
 
                 Intent notification = new Intent();
-                notification.setAction("RELATIONSHIP_NOTIFICATION");
+                notification.setAction("CUSTOM_EVENT_NOTIFICATION");
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(context, event.getEvent_ID(), notification, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 alarmManager.cancel(pendingIntent);
@@ -57,7 +62,7 @@ public class NotificationSender extends BroadcastReceiver {
 
 
                 String context_text = event.getEvent_name();
-                String context_text2 = event.getEvent_description();
+                String context_text2 = "Description: \n\t" + event.getEvent_description() + "\n" + "Date :\n\t" + event.getEvent_date();
 
                 Notification notification = new Notification.Builder(context)
                         .setSmallIcon(R.drawable.ic_calander)
@@ -103,17 +108,32 @@ public class NotificationSender extends BroadcastReceiver {
                 int dayRemainder = 1;
                 if (stop != null) {
                     long diff = (stop.getTime().getTime() - calendar.getTime().getTime());
-                    dayRemainder = (int) (diff / (1000 * 60 * 60 * 24)) + 1;
+                    dayRemainder = (int) (diff / (1000 * 60 * 60 * 24));
                 }
 
-                String context_text2 = f_date[2] + " " + f_date[1] + " " + f_date[0]
-                                + "\n" + dayRemainder + " MORE DAY(S)";
+                String eventDate = "* Date: " + f_date[2] + " " + f_date[1] + " " + f_date[0] + "\n";
+                String remaining = "* You have " + dayRemainder + " more days(s) to prepare!\n";
+
+                String summary = "";
+
+                if(date.equals("BIRTHDAY") || date.equals("MOTHER") || date.equals("FATHER")){
+                    summary = "Don't forget a present!!";
+                }else if(date.equals("ANNIVERSARY") || date.equals("VALENTINE")){
+                    remaining = remaining + "* It is time to make it romantic!!\n";
+                    summary = "Flower & Chocolate! It always work.";
+                }else if(date.equals("CHRISTMAS")){
+                    summary = "Make it a memorable Christmas";
+                }else{
+                    Log.d("ERROR", "SHOULD NOT HAPPEN");
+                }
+
+                String context_text2 = eventDate + remaining;
 
                 Notification notification = new Notification.Builder(context)
                         .setSmallIcon(R.drawable.ic_relationship)
                         .setContentTitle(date)
                         .setTicker(date)
-                        .setStyle(new Notification.BigTextStyle().bigText(context_text2))
+                        .setStyle(new Notification.BigTextStyle().bigText(context_text2).setSummaryText(summary))
                         .setContentText(context_text2)
                         .build();
                 manager.notify(id,notification);
@@ -182,12 +202,15 @@ public class NotificationSender extends BroadcastReceiver {
                 snowing = false;
             if (!pref.getBoolean("wind",false))
                 windy = false;
-            else context_text3 = context_text3.concat("Wind: " + String.valueOf(speed) + "mph ");
+            else context_text3 = context_text3.concat("* Wind: " + String.valueOf(speed) + " mph \n\n");
             if (!pref.getBoolean("temp",false)) {
                 hot = false;
                 cold = false;
             }
-            else context_text3 = String.format("%sTemp: %s°--%s°--%s℉ ", context_text3,
+            else context_text3 = String.format("%s* Temperature: \n" +
+                            "\t\t\t MIN: %s° ℉\n" +
+                            "\t\t\t Current: %s° ℉\n" +
+                            "\t\t\t MAX: %s ℉", context_text3,
                     String.valueOf(mintemp),String.valueOf(temp),String.valueOf(maxtemp));
 
             String str = "";
@@ -264,8 +287,8 @@ public class NotificationSender extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.ic_cloud_queue_black_24dp)
                     .setContentTitle("Weather Notification")
                     .setTicker("New Weather Notification!")
-                    .setStyle(new Notification.BigTextStyle().bigText(context_text2).setSummaryText(context_text3))
-                    .setContentText(context_text2)
+                    .setStyle(new Notification.BigTextStyle().bigText(context_text3).setSummaryText(context_text2))
+                    .setContentText(context_text3)
                     .build();
             manager.notify(3,notification);
 
